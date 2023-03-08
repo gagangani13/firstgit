@@ -21,7 +21,15 @@ function store(e){
     var arr1=({'mobile':mobile})
     let sarr=JSON.stringify(arr)
     let sarr1=JSON.stringify(arr1)
-    localStorage.setItem(sarr,sarr1)
+    localStorage.setItem(sarr1,sarr)
+
+    var li=document.createElement("li");
+    var addhere=document.querySelector('.addhere');
+    var details=document.createTextNode(names+"->"+email+"->"+mobile+"->"+time)
+    li.appendChild(details)
+    addhere.appendChild(li)
+    
 }
+
 
     
