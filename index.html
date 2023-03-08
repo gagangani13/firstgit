@@ -1,36 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <title>Item Lister</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous"
+    />
+    <style>
+        .customisecolor{
+            background-color: rgba(207, 151, 31, 0.795);
+            color: black !important;
+            
+        }
+    </style>
 </head>
-<body>
-  <header id="main-header" class="bg-success text-white p-4 mb-3">
-    <div class="container">
-      <h1 id="header-title">Item Lister <span style="display:none">123</span></h1>
-    </div>
-  </header>
-  <div class="container">
-   <div id="main" class="card card-body">
-    <h2 class="title">Add Items</h2>
-    <form class="form-inline mb-3">
-      <input type="text" class="form-control mr-2">
-      <input type="submit" class="btn btn-dark" value="Submit">
-    </form>
-    <h2 class="title">Items</h2>
-    <ul id="items" class="list-group">
-      <li class="list-group-item">Item 1</li>
-      <li class="list-group-item">Item 2</li>
-      <li class="list-group-item">Item 3</li>
-      <li class="list-group-item">Item 4</li>
-      <li>Item 5</li>
-    </ul>
-   </div>
-  </div>
-  <script src="dom2.js"></script>
+<body>   
+    <form id='myform'class="customisecolor">
+        <h1 style="color:orange;background-color: rgb(86, 94, 88);">Book a call</h1>
+        <p1>Book a call slot and our representatives will call you within 1 hour.</p1>
+        <hr>
+        <div class="input-group mb-3 " >
+            <label for="Name" class="input-group-text" >Name:</label>
+            <input type="text"class="form-control" id="Name" name="Name" value="" required>
+        </div>
+        <div class="input-group mb-3"> 
+            <label for="mail" class="input-group-text">Email:</label>
+            <input type="email" class="form-control"id="mail" name="mail" value="" required>
+        </div>
+        <div class="input-group mb-3">    
+            <label for="phone"class="input-group-text" >Phone:</label>
+            <input type="tel" class="form-control"id="phone" name="phone" value="" pattern="[0-9]{10}" required>
+        </div>
+        <div class="input-group mb-3">
+            <label for="call" class="input-group-text" >Call me on:</label>
+            <input type="datetime-local"class="form-control" id="call" name="call back" required>
+        </div> 
+        <div class=" mb-3 text-center">   
+            <button class="btn btn-success" id="btn">Schedule</button> 
+        </div>
+    </form> 
+    <script src='index.js'>
+    </script>    
+    
 </body>
 </html>
