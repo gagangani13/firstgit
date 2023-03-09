@@ -9,7 +9,7 @@ function store(e){
     var mobile=document.getElementById('phone').value;
     var email=document.getElementById('mail').value;
     var time=document.getElementById('call').value; 
-    var time=document.getElementById('call').value;   
+     
    
     //arr.push(names,email,time)
     //localStorage.setItem(mobile,arr)
@@ -25,6 +25,9 @@ function store(e){
 
     var li=document.createElement("li");
     li.className=mobile;
+    li.setAttribute('name',names)
+    li.setAttribute('email',email)
+    li.setAttribute('time',time)
     var addhere=document.querySelector('.addhere');
     var details=document.createTextNode(names+"->"+email+"->"+mobile+"->"+time)
     li.appendChild(details)
@@ -33,11 +36,27 @@ function store(e){
     delbut.className='btn btn-danger'
     delbut.appendChild(document.createTextNode("DELETE"))
     li.appendChild(delbut)
-    console.log(li.mobile)
     delbut.addEventListener('click',deleted);
     function deleted(e){
         var locate=e.target.parentElement;
         localStorage.removeItem(locate.className)
         parentlist.removeChild(locate);    
+
+    }  
+    var editbut=document.createElement("button");
+    editbut.className='btn btn-dark'
+    editbut.appendChild(document.createTextNode("EDIT"))
+    li.appendChild(editbut)
+    editbut.addEventListener('click',edited);
+    function edited(e){
+        document.getElementById('myform').style.backgroundColor='rgb(221, 151, 21)'
+        var locate=e.target.parentElement;
+        document.getElementById('Name').value=locate.getAttribute('name');
+        document.getElementById('phone').value=locate.getAttribute('class');
+        document.getElementById('mail').value=locate.getAttribute('email');
+        document.getElementById('call').value=locate.getAttribute('time');
+        localStorage.removeItem(locate.className)
+        parentlist.removeChild(locate);    
+
     }  
 }
